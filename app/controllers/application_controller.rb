@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    before_action :configure_permitted_parameters, if: :devise_controller?
+    # before_action :configure_permitted_parameters, if: :devise_controller?
     before_action :update_sanitized_params, if: :devise_controller?
 
     protected
@@ -9,9 +9,9 @@ class ApplicationController < ActionController::Base
            :account_update, keys: [:username, :email, :password, :occupation, :age, :school])
        end
 
-       def configure_permitted_parameters
-        devise_parameter_sanitizer.for(:sign_up) do |u|
-          u.permit(user_attributes: [:username, :email, :user_id])
-        end
-      end
+      #  def configure_permitted_parameters
+      #   devise_parameter_sanitizer.for(:sign_up) do |u|
+      #     u.permit(user_attributes: [:username, :email, :user_id])
+      #   end
+      # end
 end
