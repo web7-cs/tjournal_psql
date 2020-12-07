@@ -1,0 +1,15 @@
+<li id="teaching_idea-<%= teaching_idea.id %>">
+  <%= link_to gravatar_for(teaching_idea.user, size: 50), teaching_idea.user %>
+  <span class="user"><%= link_to teaching_idea.user.username, teaching_idea.user %></span>
+  <span class="content">
+    <%= teaching_idea.content %>
+    <%= image_tag teaching_idea.display_image if teaching_idea.image.attached? %>
+  </span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(teaching_idea.created_at) %> ago.
+    <% if current_user?(teaching_idea.user) %>
+      <%= link_to "delete", teaching_idea, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
+  </span>
+</li>
