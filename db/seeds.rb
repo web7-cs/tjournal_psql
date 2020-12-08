@@ -8,30 +8,30 @@
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 
 # Create a main sample user.
-User.create!(username:  "Example User",
-    email: "test@test.com",
-    password:              "foobar",
-    password_confirmation: "foobar",
-    occupation: "teacher",
-    age: 30,
-    school: "SamsenWittayalai school, Bangkok")
+# User.create!(username:  "Example User",
+#     email: "test@test.com",
+#     password:              "foobar",
+#     password_confirmation: "foobar",
+#     occupation: "teacher",
+#     age: 30,
+#     school: "SamsenWittayalai school, Bangkok")
 
 # Generate a bunch of additional users.
-99.times do |n|
-name  = Faker::Name.name
-email = Faker::Internet.email
-job = Faker::Job.title
-school = Faker::Nation.nationality + 'school'
-password = "password"
-age = Faker::Number.between(from: 24, to: 55)
-User.create!(username:  name,
-    email: email,
-    password:              "foobar",
-    password_confirmation: "foobar",
-    occupation: job,
-    age: age,
-    school: school)
-end
+# 99.times do |n|
+# name  = Faker::Name.name
+# email = Faker::Internet.email
+# job = Faker::Job.title
+# school = Faker::Nation.nationality + 'school'
+# password = "password"
+# age = Faker::Number.between(from: 24, to: 55)
+# User.create!(username:  name,
+#     email: email,
+#     password:              "foobar",
+#     password_confirmation: "foobar",
+#     occupation: job,
+#     age: age,
+#     school: school)
+# end
 
 # # Generate teaching_ideas for a subset of users.
 # users = User.order(:created_at).take(6)
